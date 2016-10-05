@@ -1,33 +1,34 @@
 ---
-title: YOUR-PRODUCT-NAME
-owner: Partners
+title: Anypoint Platform Service Brokers for PCF
+owner: MuleSoft
 ---
 
-**This topic should begin with a brief description of your product. See below for an example.**
+The Anypoint Platform Service Brokers for PCF enables organisations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within the fully automated and transparent infrastructure provided by PCF. The different deployment scenarios that Runtime Manager supports are described in detail here: [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies).
 
-This documentation describes the Redis Labs Enterprise Cluster (RLEC) Service Broker for Pivotal Cloud Foundry (PCF). 
-The RLEC Service Broker registers a service broker on PCF and exposes its service plans on the Marketplace. 
-Developers can provision Redis databases by creating instances of the service plans using Apps Manager or the cf CLI.
 
 ## <a id='overview'></a>Overview
 
-**The overview should provide a description of the product's key features.**
+The Anypoint Platform On-Premises Edition includes the following functionalities:
 
-YOUR-PRODUCT-NAME includes the following key features:
+* [Runtime Manager](https://docs.mulesoft.com/runtime-manager/), which lets you keep track of your deployed Mule applications
+* [API Manager](https://docs.mulesoft.com/api-manager/), which lets you keep track of your registered APIs
+* [Anypoint Exchange](https://docs.mulesoft.com/mule-fundamentals/v/3.8/anypoint-exchange), where your organization can share various kinds of assets that can be reused throughout your integrations
 
-* Feature one.
-* Feature two.
-* Feature three.
+Anypoint Platform Service Brokers for PCF integrates PCF to the Anypoint Platform On-premises Edition. It allows you to:
+
+* Deploy Mule applications to PCF via the Runtime Manager UI as one more deployment target. See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies).
+* Automatically create and deploy a Mule proxy application to PCF, which intercepts traffic to a non-Mule application, allowing you to apply policies over it and view usage metrics. See [Deploy a Proxy](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy)
+
 
 ## <a id="snapshot"></a>Product Snapshot
 
 <dl>
-<dt>YOUR-PRODUCT-NAME Details:</dt>
-<dd><strong>Version</strong>: vYOUR-VERSION-NUMBER </dd>
-<dd><strong>Release Date</strong>: YOUR-RELEASE-DATE (Ex: August 1, 2016)</dd>
-<dd><strong>Software component version</strong>: vYOUR-SOFTWARE-COMPONENT-VERSION-NUMBER</dd>
-<dd><strong>Compatible Ops Manager Version(s)</strong>: vYOUR-COMPATIBLE-OPS-MAN-VERSION (Ex. v1.6.x, v1.7.x)</dd>
-<dd><strong>Compatible Elastic Runtime Version(s)</strong>: vYOUR-COMPATIBLE-ELASTIC-RUNTIME-VERSION (Ex. v1.4.x, v1.5.x, v1.6.x)</dd>
+<dt>Current Anypoint Platform Service Brokers for PCF Details:</dt>
+<dd><strong>Version</strong>: 1.5.0-beta </dd>
+<dd><strong>Release Date</strong>: October 14, 2016</dd>
+<dd><strong>Software component version</strong>: Anypoint Platform On-premises Edition 1.5</dd>
+<dd><strong>Compatible Ops Manager Version(s)</strong>: v1.7.x</dd>
+<dd><strong>Compatible Elastic Runtime Version(s)</strong>: v1.7.x</dd>
 <dd><strong>vSphere support?</strong> YES-OR-NO</dd>
 <dd><strong>OpenStack support?</strong> YES-OR-NO</dd>
 <dd><strong>AWS support?</strong> YES-OR-NO</dd>
@@ -35,25 +36,33 @@ YOUR-PRODUCT-NAME includes the following key features:
 
 ## <a id="reqs"></a>Requirements
 
-**Provide any general or specific requirements, prerequisites, or dependencies here. 
-A general requirement might be something like, "An AppDynamics account." 
-A specific requirement might be something like, "Packaging Dependencies for Offline Buildpacks."**
 
-YOUR-PRODUCT-NAME has the following requirements:
+Before you can begin the steps detailed in this document, you must have the following software installed in your servers:
 
-+ PREREQUISITE-1
+* PCF Apps Manager 1.7.x or above
+* PCF Ops Manager 1.7.x or above
+* Cloud Foundry CLI
+* Python 2.x or above
+* Anypoint Platform On-Premises Edition
+* The default Java buildpack that PCF provides
 
-+ PREREQUISITE-2
+**Note:** Your Anypoint Platform and PCF installations must both be on the same network in order for them to be able to communicate with each other.
+
+After following the steps in this document, you must also:
+* Install the Mule Runtime BuildPack
+* Run the Space Configuration Tool
+
+**Note:** See [MuleSoft documentation]() for details on how to carry out these steps.
+
 
 ## <a id="limitations"></a>Limitations
 
-**List any known limitations.**
+Each instance of the PCF Tile is linked to one PCF cluster, and every instance of the Space Configuration Tool is linked to one PCF space. Therefore, if you wish to manage multiple PCF spaces or multiple PCF clusters, you must also perform multiple installations of the Anypoint Platform Service Brokers for PCF and the Space Configuration Tool to match these.
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to YOUR-SUPPORT-EMAIL.
+Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [MuleSoft support](support@mulesoft.com).
 
 ## <a id='license'></a>License
 
-**List any license information here.**
-
+In order to use the Anypoint Platform On-premises Edition you must obtain a licence for this software. Contact [MuleSoft sales](sales@mulesoft.com).
