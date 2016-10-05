@@ -14,11 +14,14 @@ The Anypoint Platform On-Premises Edition includes the following functionalities
 * [API Manager](https://docs.mulesoft.com/api-manager/), which lets you keep track of your registered APIs
 * [Anypoint Exchange](https://docs.mulesoft.com/mule-fundamentals/v/3.8/anypoint-exchange), where your organization can share various kinds of assets that can be reused throughout your integrations
 
-Anypoint Platform Service Brokers for PCF integrates PCF to the Anypoint Platform On-premises Edition. It includes the following features:
+The *Anypoint Platform Service Brokers* tile for PCF integrates PCF to the Anypoint Platform On-premises Edition. It includes the following features:
 
 * Deploy Mule applications to PCF via the Runtime Manager UI as one more deployment target. See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies). This is mediated through the *Runtime Manager service broker*.
 * Automatically create and deploy a Mule proxy application to PCF, which intercepts traffic to a non-Mule application, allowing you to apply policies over it and view usage metrics. See [Deploy a Proxy](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy). This is mediated through the *API Gateway Manager service broker*.
 
+A Service Broker allows Cloud Foundry applications to bind to services and interact with them easily from the UI or the command line. *Anypoint Platform Service Brokers for PCF* tile enables you to use one (or more) Anypoint Platform accounts and is deployed as a Java Application on Cloud Foundry. The tile exposes the Anypoint Platform as a Managed Service on the Cloud Foundry Marketplace and allows users to directly create a service instance and bind it to their applications either from the Pivotal Apps Manager Console or from the command line.
+
+This tile installs Anypoint Platform Service Brokers for PCF as an application, then registers the Service Brokers on Cloud Foundry to expose their service plans on the Marketplace.  This simplifies the installation and subsequent use of Anypoint Platform in conjunction with your Cloud Foundry applications.
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -57,7 +60,7 @@ After following the steps in this document, you must also:
 
 ## <a id="limitations"></a>Limitations
 
-Each instance of the PCF Tile is linked to one PCF cluster, and every instance of the Space Configuration Tool is linked to one PCF space. Therefore, if you wish to manage multiple PCF spaces or multiple PCF clusters, you must also perform multiple installations of the Anypoint Platform Service Brokers for PCF and the Space Configuration Tool to match these.
+Each instance of this PCF Tile is linked to one PCF cluster, and every instance of the Space Configuration Tool is linked to one PCF space. Therefore, if you wish to manage multiple PCF spaces or multiple PCF clusters, you must also perform multiple installations of the Anypoint Platform Service Brokers for PCF and the Space Configuration Tool to match these.
 
 ## <a id="feedback"></a>Feedback
 
