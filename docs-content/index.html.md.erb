@@ -14,10 +14,10 @@ The Anypoint Platform On-Premises Edition includes the following functionalities
 * [API Manager](https://docs.mulesoft.com/api-manager/), which lets you keep track of your registered APIs
 * [Anypoint Exchange](https://docs.mulesoft.com/mule-fundamentals/v/3.8/anypoint-exchange), where your organization can share various kinds of assets that can be reused throughout your integrations
 
-Anypoint Platform Service Brokers for PCF integrates PCF to the Anypoint Platform On-premises Edition. It allows you to:
+Anypoint Platform Service Brokers for PCF integrates PCF to the Anypoint Platform On-premises Edition. It includes the following features:
 
-* Deploy Mule applications to PCF via the Runtime Manager UI as one more deployment target. See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies).
-* Automatically create and deploy a Mule proxy application to PCF, which intercepts traffic to a non-Mule application, allowing you to apply policies over it and view usage metrics. See [Deploy a Proxy](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy)
+* Deploy Mule applications to PCF via the Runtime Manager UI as one more deployment target. See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies). This is mediated through the *Runtime Manager service broker*.
+* Automatically create and deploy a Mule proxy application to PCF, which intercepts traffic to a non-Mule application, allowing you to apply policies over it and view usage metrics. See [Deploy a Proxy](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy). This is mediated through the *API Gateway Manager service broker*.
 
 
 ## <a id="snapshot"></a>Product Snapshot
@@ -65,4 +65,12 @@ Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Fo
 
 ## <a id='license'></a>License
 
-In order to use the Anypoint Platform On-premises Edition you must obtain a licence for this software. Contact [MuleSoft sales](sales@mulesoft.com).
+The product is based upon Anypoint Platform On-premises Edition, so a license specifically for this version of the product is required. Contact [MuleSoft sales](sales@mulesoft.com).
+
+To Generate a *runtime license digest* using MuleSoft License Verifier service, you must do the following:
+
+1. On a web browser, go to https://mulelicenseverifier.cloudhub.io
+1. Upload your MuleSoft Runtime license `.lic` file, obtained through the Customer Onboarding process
+1 .Click the **Verify** button
+1. Download the digested license by clicking the Download digested license (muleLicenseKey.lic) link
+1. When [Configuring the *Anypoint Platform Service Brokers for PCF* Tile](installing.html), you’ll have to paste the contents of the `muleLicenseKey.lic` file on the `MULE_LICENCE` field.
