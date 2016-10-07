@@ -11,21 +11,34 @@ From Anypoint, run the Space Configuration Tool for each PCF space in which you 
 
 Each instance of the Space Configuration Tool is linked to one PCF space. Therefore, if you want to use the service in multiple PCF spaces you must also perform multiple installations of the Space Configuration Tool.
 
-##<a id='create-bind'></a> Create and Bind Instances of the Anytime Platform Services
-
-You can create and bind service instances using either the Apps Manager UI or the Cloud Foundry Command Line Interface (cf CLI). Refer to the following topics for instructions:
-
-* **cf CLI**: 
-	* [Create a service instance](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#create)
-	* [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#bind)
-* **Apps Manager**: 
-	* [Create a service instance](http://docs.run.pivotal.io/marketplace/use-console.html)
-	* [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/console/manage-apps.html#manage-service)
 
 ##<a id='deploy-apps'></a> Deploy Mule Apps to PCF
 
 For instructions on deploying Mule applications to PCF from the Runtime Manager UI, see the [Deploying to PCF](https://docs.mulesoft.com/runtime-manager/deploying-to-pcf) topic in the Mulesoft documentation.
 
+Note that when deploying a Mule application, you can bind this deployment to a service by setting this in the Anypoint Platform UI.
+
 ##<a id='deploy-proxy'></a> Deploy a Mule API Proxy to PCF
 
 For instructions on automatically creating and deploying a Mule proxy application to PCF, see the [Deploy a Proxy to PCF](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy#to-pivotal-cloud-foundry) topic in the Mulesoft documentation.
+
+
+##<a id='create-bind'></a> Create and Bind Instances of the Anytime Platform Services
+
+You can create service instance using either the Apps Manager UI or the Cloud Foundry Command Line Interface (cf CLI). Refer to the following topics for instructions:
+
+* **cf CLI**: 
+	* [Create a service instance](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#create)
+
+* **Apps Manager**: 
+	* [Create a service instance](http://docs.run.pivotal.io/marketplace/use-console.html)
+
+
+Once created, you can bind your Mule application deployments to these services. This can be done either through the Anypoint Platform UI, or alternatively via the Apps Manager UI or the Cloud Foundry Command Line Interface:
+* **Anypoint Platform UI**: 
+	*[Deploying to PCF](https://docs.mulesoft.com/runtime-manager/deploying-to-pcf#-service-bindings-tab)
+
+* **cf CLI**: 
+	* [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/devguide/services/managing-services.html#bind)
+* **Apps Manager**: 
+	* [Bind a service instance to an app](http://docs.pivotal.io/pivotalcf/console/manage-apps.html#manage-service)
