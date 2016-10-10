@@ -9,19 +9,21 @@ This documentation describes the Mulesoft Anypoint Platform Service Brokers tile
 
 The Anypoint Platform Service Brokers for PCF connect apps running on PCF to the [Anypoint Platform](https://www.mulesoft.com/platform/enterprise-integration) On-Premises Edition, a lightweight enterprise service bus (ESB) and integration platform that connects applications together quickly and easily. 
 
-The tile includes two service brokers, the **Runtime Manager Service Broker** and the **API Gateway Manager Service Broker**. The Anypoint Platform for PCF, which consists of the Anypoint Platform On-Premises Edition and the two service brokers, enables organizations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within PCF
+The tile includes two service brokers, the **Runtime Manager Service Broker** and the **API Gateway Manager Service Broker**. The Anypoint Platform for PCF, which includes the two service brokers of the Anypoint Platform On-Premises Edition, enables organizations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within PCF.
 
-Both Service Brokers support the [Anypoint Exchange](https://docs.mulesoft.com/mule-fundamentals/v/3.8/anypoint-exchange), where your organization can discover and share assets for use and reuse throughout your integrations.
+## <a id="features"></a> Key Features
+
+* Integrates PCF with Anypoint's [Runtime Manager](https://docs.mulesoft.com/runtime-manager/) to track and manage Mule apps deployed to PCF.
+
+* Mediates between PCF and the Anypoint [API Manager](https://docs.mulesoft.com/api-manager/) to track and manage registered APIs.
+
+* Includes [Anypoint Exchange](https://docs.mulesoft.com/mule-fundamentals/v/3.8/anypoint-exchange), where your organization can discover and share assets for use and reuse throughout your integrations.
 
 ### <a id="rmsb"></a> Runtime Manager Service Broker
-
-The **Runtime Manager Service Broker** integrates PCF with Anypoint's [Runtime Manager](https://docs.mulesoft.com/runtime-manager/) to track and manage Mule apps deployed to PCF.
 
 The **Runtime Manager Service Broker** exposes PCF as a deployment target within the Anypoint Runtime Manager and lets you deploy Mule applications to PCF, alongside other deployment targets. See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies) for example scenarios where Mule apps deploy to cloud or local-environment targets.
 
 ### <a id="apigsb"></a> API Gateway Manager Service Broker
-
-The **API Gateway Manager Service Broker** mediates between PCF and the Anypoint [API Manager](https://docs.mulesoft.com/api-manager/) to track and manage your registered APIs.
 
 The API Gateway Manager lets you create and deploy a Mule API proxy that intercepts traffic to a non-Mule API app running on PCF. This lets you use the Mulesoft interface to apply policies over the API and the PCF interface to view usage and policy metrics. See [Deploy a Proxy](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy).
 
@@ -39,9 +41,9 @@ A Service Broker allows Cloud Foundry applications to bind to services and inter
 <dd><strong>Software component version</strong>: Anypoint Platform On-premises Edition 1.5</dd>
 <dd><strong>Compatible Ops Manager Version(s)</strong>: v1.7.x</dd>
 <dd><strong>Compatible Elastic Runtime Version(s)</strong>: v1.7.x</dd>
-<dd><strong>vSphere support?</strong> YES-OR-NO</dd>
-<dd><strong>OpenStack support?</strong> YES-OR-NO</dd>
-<dd><strong>AWS support?</strong> YES-OR-NO</dd>
+<dd><strong>vSphere support?</strong> No</dd>
+<dd><strong>OpenStack support?</strong> No</dd>
+<dd><strong>AWS support?</strong> Yes</dd>
 </dl>
 
 ## <a id="reqs"></a>Requirements
@@ -58,7 +60,7 @@ To install and run the Anypoint Platform for PCF, you need the following:
 
 ### Network Requirements
 
-Your Anypoint Platform and PCF installation must be on the same network in order to communicate with each other.
+Your Anypoint Platform On-Premises Edition must be installed on the same  network that your Anypoint Platform for PCF runs on, in order for the two to communicate with each other.
 
 ##<a id='update'></a> Upgrading to the Latest Version
 
@@ -67,8 +69,8 @@ To upgrade or downgrade the tile version, follow [PCF’s documentation]. This p
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [MuleSoft support](support@mulesoft.com).
+Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [MuleSoft support](mailto:support@mulesoft.com).
 
 ## <a id='license'></a>License
 
-The product is based upon Anypoint Platform On-premises Edition, so a license specifically for this version of the product is required. Contact [MuleSoft sales](sales@mulesoft.com).
+The product is based upon Anypoint Platform On-premises Edition, so a license specifically for this version of the product is required. Contact [MuleSoft sales](mailto:sales@mulesoft.com).
