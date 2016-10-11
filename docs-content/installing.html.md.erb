@@ -26,7 +26,7 @@ This topic describes how a PCF operator installs and configures Anypoint Platfor
 
 To generate a *runtime license digest* using MuleSoft License Verifier service, you must do the following:
 
-1. In a browser, navigate to `https://mulelicenseverifier.cloudhub.io`.
+1. In a browser, navigate to [https://mulelicenseverifier.cloudhub.io](https://mulelicenseverifier.cloudhub.io).
 1. Upload your MuleSoft Runtime license `.lic` file, which you obtained during the customer onboarding process.
 1. Click **Verify**.
 1. Download the digested license by clicking **Download digested license**. This downloads the `muleLicenseKey.lic` file.
@@ -46,11 +46,11 @@ You must have credentials for your [Anypoint Platform organization](https://docs
 
 Below are the configurable settings on your Tile. These fields come with default values that you will likely need to change for your particular use case.
 
-#### Mule Runtime Licence Configuration
+#### Mule Runtime License Configuration
 
 Property | Description |
 | --------- | ------------ |
-| MULE\_LICENSE|Paste the contents of the `muleLicenseKey.lic` file you generated on the MuleSoft License Verifier service. See section [Licence](index.html#licence). |
+| MULE\_LICENSE|Paste the contents of the `muleLicenseKey.lic` file you generated on the MuleSoft License Verifier service. See section [License](index.html#license). |
 
 <%= image_tag 'licence.png' %>
 
@@ -113,8 +113,8 @@ If necessary, download the required stemcell from [Pivotal Network](http://netwo
 After installing and configuring the tile, you must also install:
 
 * the Mule Runtime Buildpack
-* the Space Configuration tool
+* the Space Configuration Tool
 
 See full instructions about how to install and configure these components [here](https://docs.mulesoft.com/anypoint-platform-on-premises/v/1.5.0/configuring-anypoint-platform-for-pcf).
 
-Once you have installed the MuleSoft Anypoint Platform Service Brokers for PCF tile, the Mule Runtime Buildpack and the space configuration tool, your developers can create instances of the services within their development spaces. For each PCF space in which they create a service instance, they must create a corresponding Anypoint Space Configuration Tool from the Anypoint interface. See the [Using Anypoint Platform for PCF](using.html) topic for details.
+Once you have installed the MuleSoft Anypoint Platform Service Brokers for PCF tile, the Mule Runtime Buildpack and the Space Configuration Tool, your developers can create instances of the services within their development spaces. For each PCF space in which they create a service instance, they must create a corresponding Anypoint Space Configuration Tool from the Anypoint interface. See the [Using Anypoint Platform for PCF](using.html) topic for details.
