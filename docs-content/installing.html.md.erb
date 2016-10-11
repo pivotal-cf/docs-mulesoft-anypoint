@@ -15,8 +15,6 @@ This topic describes how a PCF operator installs and configures Anypoint Platfor
 
 1. Click the newly added **Anypoint Platform Service Brokers for PCF** tile to configure it. Follow the instructions in the [Configure the Tile in Ops Manager](#tile) section.
 
-<%= image_tag 'anypoint-pcf-config.png' %>
-
 1. Click **Save**.
 
 1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install **Anypoint Platform Service Brokers for PCF** tile.
@@ -48,11 +46,20 @@ You must have credentials for your [Anypoint Platform organization](https://docs
 
 Below are the configurable settings on your Tile. These fields come with default values that you will likely need to change for your particular use case.
 
-[table]:
+#### Mule Runtime Licence Configuration
+
+Property | Description |
+| --------- | ------------ |
+| MULE\_LICENSE|Paste the contents of the `muleLicenseKey.lic` file you generated on the MuleSoft License Verifier service. See section [Licence](index.html#licence). |
+
+<%= image_tag 'licence.png' %>
+
+#### On-prem Anypoint Platform Properties
+
+This tab sets the main properties for your platform.
 
 | Property | Description |
 | --------- | ------------ |
-| MULE\_LICENSE|Paste the contents of the `muleLicenseKey.lic` file you generated on the MuleSoft License Verifier service. See section [Licence](index.html#licence). |
 | SUPER\_USER\_CREDS\_CLIENTID | `clientId` on Anypoint platform. Obtain it by doing as described above |
 | SUPER\_USER\_CREDS\_CLIENTSECRET | `clientSecret` to access Anypoint platform. Obtain it by doing as described above |
 | SUPER\_USER\_CREDS\_MASTERORGID | `orgId` for your organization on the Anypoint platform. Obtain it by doing as described above. If you have more than one because you will manage multiple top-level organizations and want to run each on a different PCF space, you must install multiple separate tiles and configure one with each.|
@@ -60,6 +67,10 @@ Below are the configurable settings on your Tile. These fields come with default
 | ANYPOINT\_PLATFORM\_CORESERVICES\_BASE\_URI | URI under which you host the Core Services for the Anypoint Platform on your local network |
 | ANYPOINT\_PLATFORM\_ARMBASEURI | URI under which you host the Runtime Manager on your local network |
 
+
+<%= image_tag 'on-prem-properties.png' %>
+
+#### Runtime Manager Service Broker Configuration
 
 The following properties are required by Runtime Manager service broker. These properties need to be unique per PCF installation:
 
@@ -69,6 +80,10 @@ The following properties are required by Runtime Manager service broker. These p
 | CF\_SERVICE\_ID | Runtime manager service broker service id |
 | CF\_SERVICE\_PLAN | Runtime manager service broker service plan |
 
+<%= image_tag 'runtime-manager-service.png' %>
+
+#### API Gateway Service Broker Configuration
+
 The following properties are required by the API Gateway service broker. These properties need to be unique per PCF installation:
 
 | Property | Description |
@@ -77,10 +92,21 @@ The following properties are required by the API Gateway service broker. These p
 | GATEWAY\_SERVICE\_ID | API gateway service broker service id |
 | GATEWAY\_SERVICE\_PLAN | API gateway service broker service plan |
 
+<%= image_tag 'api-gateway-service.png' %>
+
+#### Sercice Access
+
+You can choose to enable or dissable either of the two service brokers through this tab.
+
+<%= image_tag 'service-access.png' %>
+
+
+
 #### Stemcell
 
-1. Click **Stemcell**.
-1. If necessary, download the required stemcell from [Pivotal Network](http://network.pivotal.io/products/stemcells) and upload it as a `.zip` file.
+If necessary, download the required stemcell from [Pivotal Network](http://network.pivotal.io/products/stemcells) and upload it as a `.zip` file by clicking **Import Stemcell**.
+
+<%= image_tag 'stemcell.png' %>
 
 ##<a id='buildpack'></a> Install the Mule Runtime Buildpack
 
