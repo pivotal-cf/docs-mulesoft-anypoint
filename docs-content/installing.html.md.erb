@@ -1,128 +1,61 @@
 ---
-title: Installing and Configuring Anypoint Platform Service Brokers for PCF
+title: Installing Anypoint Platform Service Brokers for PCF
 owner: MuleSoft
 ---
 
-This topic describes how a Pivotal Cloud Foundry (PCF) operator installs and configures [Anypoint Platform Service Brokers for PCF](http://docs.pivotal.io/mulesoft/).
+## <a id="prereq"></a> Verify Prerequisites
 
-##<a id='install'></a> Install
+Before installing the Anypoint Platform Service Brokers for PCF tile ensure that you have completed the prerequisite tasks outlined in this section.
 
-1. Download the product file from [MuleSoft's customer portal](https://www.mulesoft.com/support-login) or get in touch with your MuleSoft account representative.
+###<a id='third-party'></a> Install Required 3rd-party Tiles
 
-1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
+Before installing Anypoint Platform Service Brokers for PCF, you must install and configure the following 3rd-party tiles. Ensure that you install the version of these tiles that corresponds to the version of your PCF installation:
 
-1. Click **Add** next to the uploaded Anypoint Platform Service Brokers for PCF tile in the Ops Manager **Available Products** view to add it to your staging area.
+* Redis for PCF, [version 1.5](http://docs.pivotal.io/redis/1-5/index.html).
 
-1. Click the newly added **Anypoint Platform Service Brokers for PCF** tile to configure it. Follow the instructions in the [Configure the Tile in Ops Manager](#tile) section.
+* Rabbit MQ for PCF, [version 1.6](http://docs.pivotal.io/rabbitmq-cf/1-6/index.html) or [version 1.7](http://docs.pivotal.io/rabbitmq-cf/1-7/index.html)
 
-1. Click **Save**.
-
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install **Anypoint Platform Service Brokers for PCF** tile.
+<p class="note"><strong>Note</strong>: When installing these tiles, do not configure them to use SSL.</p>
 
 
-##<a id='configure'></a> Configure
+###<a id='license'></a>Obtain Your muleLicenseKey.lic File</a>
 
-###<a id='digest'></a> Generate a License Digest
+To configure the Anypoint Platform Service Brokers for PCF tile, you must provide a `muleLicenseKey.lic` file. To obtain this file:
 
-Use the MuleSoft License Verifier service to generate a runtime license digest as follows:
-
-1. In a browser, navigate to [https://mulelicenseverifier.cloudhub.io](https://mulelicenseverifier.cloudhub.io).
-1. Upload your MuleSoft Runtime license `.lic` file, which you obtained during the customer onboarding process.
+1. In a browser, navigate to the Mule License Verifier at: [https://mulelicenseverifier.cloudhub.io](https://mulelicenseverifier.cloudhub.io).
+1. Upload the MuleSoft Runtime license (.lic) file obtained during your customer onboarding process.
 1. Click **Verify**.
-1. Download the digested license by clicking **Download digested license**. This downloads the `muleLicenseKey.lic` file.
-1. Record the contents of the `muleLicenseKey.lic` file for use in the [Configure the Tile in Ops Manager](#tile) section.
+1. Download the updated license by clicking **Download digested license**. 
+
+This downloads the `muleLicenseKey.lic` file to your local system. Use the contents of this license file later when configuring the tile.
 
 ###<a id='creds'></a> Retrieve Your Anypoint Platform Credentials
 
-You must have credentials for your [Anypoint Platform organization](https://docs.mulesoft.com/access-management/organization) when configuring the tile. Follow these instructions to obtain your credentials:
+To configure the Anypoint Platform Service Brokers for PCF tile, you must have credentials for your [Anypoint Platform organization](https://docs.mulesoft.com/access-management/organization) . To obtain your credentials:
 
 1. Log in to the Anypoint Platform as an admin user.
-
 1. Navigate to **Access Management** > **Organization**.
+1. Open the settings for your main organization and record the values for `clientId`, `clientSecret`, `orgId`. 
 
-1. Open the settings for your main organization and record the values for `clientId`, `clientSecret`, `orgId`. Use these values in the next section.
-
-###<a id='tile'></a> Configure the Tile in Ops Manager
-
-Below are the configurable settings on your Tile. These fields come with default values that you will likely need to change for your particular use case.
-
-#### Mule Runtime License Configuration
+Use these values later when configuring the tile.
 
 
-<%= image_tag 'licence.png' %>
+## <a id="install"></a> Install the Anypoint Platform Service Brokers for PCF Tile
 
-Property | Description |
-| --------- | ------------ |
-| MULE\_LICENSE|Paste the contents of the `muleLicenseKey.lic` file you generated on the MuleSoft License Verifier service. See section [License](index.html#license). |
+To install the Anypoint Platform Service Brokers for PCF tile, perform the following:
 
+1. Download the product file from [MuleSoft's customer portal](https://www.mulesoft.com/support-login) or contact your MuleSoft account representative.
 
-#### On-prem Anypoint Platform Properties
+1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
-This tab sets the main properties for your platform.
+1. To add the tile to your staging area, click **Add** next to the Anypoint Platform Service Brokers for PCF tile in the Ops Manager **Available Products** view.
 
-<%= image_tag 'on-prem-properties.png' %>
+1. To configure the tile, click the newly added **Anypoint Platform Service Brokers for PCF** tile. Follow the procedures in the [Configure the Tile in Ops Manager](./configuring.html) topic. After finishing these procedures, return to the next step to apply your changes
 
-| Property | Description |
-| --------- | ------------ |
-| SUPER\_USER\_CREDS\_CLIENTID | `clientId` on Anypoint platform. Obtain it by doing as described above |
-| SUPER\_USER\_CREDS\_CLIENTSECRET | `clientSecret` to access Anypoint platform. Obtain it by doing as described above |
-| SUPER\_USER\_CREDS\_MASTERORGID | `orgId` for your organization on the Anypoint platform. Obtain it by doing as described above. If you have more than one because you will manage multiple top-level organizations and want to run each on a different PCF space, you must install multiple separate tiles and configure one with each.|
-| ANYPOINT\_PLATFORM\_PLATFORM\_BASE\_URI | URI under which you host the Anypoint Platform on your local network |
-| ANYPOINT\_PLATFORM\_CORESERVICES\_BASE\_URI | URI under which you host the Core Services for the Anypoint Platform on your local network |
-| ANYPOINT\_PLATFORM\_ARMBASEURI | URI under which you host the Runtime Manager on your local network |
+1. After finishing the tile configuration, click **Save**.
 
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the **Anypoint Platform Service Brokers for PCF** tile.
 
+If your PCF instllation has multiple organizations because you will manage multiple top-level organizations and want to run each on a different PCF space, you must install multiple separate tiles and configure one with each.
 
-
-#### Runtime Manager Service Broker Configuration
-
-The following properties are required by Runtime Manager service broker. These properties need to be unique per PCF installation:
-
-<%= image_tag 'runtime-manager-service.png' %>
-
-| Property | Description |
-| --------- | ------------ |
-| CF\_SERVICE\_NAME | Runtime manager service broker service name |
-| CF\_SERVICE\_ID | Runtime manager service broker service id |
-| CF\_SERVICE\_PLAN | Runtime manager service broker service plan |
-
-
-
-#### API Gateway Service Broker Configuration
-
-The following properties are required by the API Gateway service broker. These properties need to be unique per PCF installation:
-
-<%= image_tag 'api-gateway-service.png' %>
-
-| Property | Description |
-| --------- | ------------ |
-| GATEWAY\_SERVICE\_NAME | API gateway service broker service name |
-| GATEWAY\_SERVICE\_ID | API gateway service broker service id |
-| GATEWAY\_SERVICE\_PLAN | API gateway service broker service plan |
-
-
-
-#### Service Access
-
-You can choose to enable or disable either of the two service brokers through this tab.
-
-<%= image_tag 'service-access.png' %>
-
-
-
-#### Stemcell
-
-If necessary, download the required stemcell from [Pivotal Network](http://network.pivotal.io/products/stemcells) and upload it as a `.zip` file by clicking **Import Stemcell**.
-
-<%= image_tag 'stemcell.png' %>
-
-##<a id='buildpack'></a> Install the Mule Runtime Buildpack
-
-After installing and configuring the tile, you must also install:
-
-* The Mule Runtime Buildpack
-* The Space Configuration Tool
-
-See full instructions about how to install and configure these components [here](https://docs.mulesoft.com/anypoint-platform-on-premises/v/1.5.0/configuring-anypoint-platform-for-pcf).
-
-Once you have installed the MuleSoft Anypoint Platform Service Brokers for PCF tile, the Mule Runtime Buildpack and the Space Configuration Tool, your developers can create instances of the services within their development spaces. For each PCF space in which they create a service instance, they must create a corresponding Anypoint Space Configuration Tool from the Anypoint interface. See the [Using Anypoint Platform for PCF](using.html) topic for details.
+After installing and configuring Installing Anypoint Platform Service Brokers for PCF, see [Using Anypoint Platform for PCF](./using.html) for additional requirements.
