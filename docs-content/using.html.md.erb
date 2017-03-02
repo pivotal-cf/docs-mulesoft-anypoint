@@ -5,6 +5,18 @@ owner: MuleSoft
 
 This topic describes how a Pivotal Cloud Foundry (PCF) developer uses Anypoint Platform Service Brokers for PCF to create service instances and bind them to their apps.
 
+##<a id='buildpack'></a> Install the Mule Runtime Buildpack
+
+After installing and configuring the tile, you must also install:
+
+* The Mule Runtime Buildpack
+* The Space Configuration Tool
+
+See full instructions about how to install and configure these components [here](https://docs.mulesoft.com/anypoint-platform-on-premises/v/1.5.0/configuring-anypoint-platform-for-pcf).
+
+Once you have installed the MuleSoft Anypoint Platform Service Brokers for PCF tile, the Mule Runtime Buildpack and the Space Configuration Tool, your developers can create instances of the services within their development spaces. For each PCF space in which they create a service instance, they must create a corresponding Anypoint Space Configuration Tool from the Anypoint interface. See the [Using Anypoint Platform for PCF](using.html) topic for details.
+
+
 ##<a id='space-config'></a> Run the Space Configuration Tool
 
 From Anypoint, run the Space Configuration Tool for each PCF space in which you plan to install a Mulesoft Anypoint service instance.

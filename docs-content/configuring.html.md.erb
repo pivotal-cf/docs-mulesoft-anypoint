@@ -1,0 +1,82 @@
+---
+title: Configuring Anypoint Platform Service Brokers for PCF
+owner: MuleSoft
+---
+
+This topic describes how to configure the Anypoint Platform Service Brokers for PCF tile. Before configuring this tile, ensure that you have verfied the prerequisites and installed the tile as described in [Installing Anypoint Platform Service Brokers for PCF](installing.html)
+
+To configure the tile, modify that properties on each tab as necessary. The following sections describe the properties that appear on each tab.
+
+##<a id='license'></a> Configure the Mule Runtime License
+
+Use the **Mule Runtime License Configuration** tab to add the license file in the textbox on this tab. This is the license file that you downloaded in [Obtain Your muleLicenseKey.lic File](./installing.html#license).
+
+<%= image_tag 'licence.png' %>
+
+##<a id='general'></a>Configure General Properties
+
+Use the **Anypoint Platform - Private Cloud Edition Properties** tab to configure general properties of the tile.
+
+<%= image_tag 'on-prem-properties.png' %>
+
+This tab contains the following properties:
+
+| Property | Description |
+| --------- | ------------ |
+| Anypoint clientId | Enter the value of the `clientId` you obtained before installing the tile. |
+| Anypoint clientSecret | Enter the value of the `clientSecret` you obtained before installing the tile. |
+| Anypoint orgId | Enter the value of the `orgId` you obtained before installing the tile. |
+| Anypoint platform URI | Enter the URI of the Anypoint Platform host in your local network. |
+| Anypoint coreservices URI | Enter the URI of the Anypoint Platform Core Services host in your local network |
+| Anypoint contracts URI | Enter the URI of your contract caching service.|
+| Anypoint platform ARM base URI | Enter the URI of the Runtime Manager host on your local network |
+
+
+##<a id='services-config'></a> Configure the Runtime Manager and API Gateway Service Brokers
+
+Use the **Anypoint Platform - Private Cloud Edition Service Broker Configuration** tab to configure the Runtime Manager Service Brokers.
+
+<%= image_tag 'runtime-manager-service.png' %>
+
+The following properties are required by Runtime Manager service broker. If you have multiple PCF installations, these properties must be uniquely defined for each installation:
+
+
+* RuntimeManager Service Broker Service Name
+* RuntimeManager Service Broker Service UUID
+* RuntimeManager Service Broker Service Plan
+* API gateway service broker service name
+* API gateway service broker service UUID
+* API gateway service broker service plan
+
+##<a id='metrics'></a> Configure Metering Service Plans
+
+Use the **Anypoint Metering Service Plans** tab to configure the maximum number of monthly API requests (in millions) for each type of PCF space. Spaces are designated for production, pre-production, staging, and development environments.
+
+<%= image_tag 'metering-service.png' %>
+
+##<a id='services-enable'></a> Enable or Disable Service Brokers
+
+Use the **Service Access** tab to enable or disable specific Anypoint Platform service brokers.
+
+<%= image_tag 'service-access.png' %>
+
+##<a id='errands'></a> Configure Errands
+
+Use the **Errands Tab** to enable or disable post-deploy or pre-delete errands.
+
+<%= image_tag 'errands.png' %>
+
+This tile contains these errands:
+
+| Errand | Description |
+| --------- | ------------ |
+| deploy-metering-errands | Deploys and updates the Anypoint Metering Service Broker and the Anypoint Metering application |
+| deploy-anypoint-platform-errands | Deploys and updates the Runtime Manager service broker and API Gateway Manager service broker |
+| delete-metering-errands | Deletes the Anypoint metering Service Broker and Anypoint Metering application |
+| delete-anypoint-platform-errands | Deletes the Runtime Manager service broker and API Gateway Manager service broker |
+
+##<a id='stemcell'></a> Import a New Stemcell
+
+If necessary, download the required stemcell from [Pivotal Network](http://network.pivotal.io/products/stemcells) and upload it as a `.zip` file by clicking **Import Stemcell**.
+
+<%= image_tag 'stemcell.png' %>
