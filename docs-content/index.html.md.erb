@@ -7,15 +7,7 @@ This documentation describes the Mulesoft Anypoint Platform Service Brokers tile
 
 ## <a id="overview"></a> Overview
 
-[Anypoint Platform](https://www.mulesoft.com/platform/enterprise-integration) solves the most challenging connectivity problems across SOA, SaaS, and APIs. It's a unified, highly productive, hybrid integration platform that creates a seamless application network of apps, data and devices with API-led connectivity.
-
-The Anypoint Platform Service Brokers for PCF tile connects applications running on PCF to the Anypoint Platform. The tile includes these service brokers: 
-
-* Runtime Manager Service Broker
-* API Gateway Manager Service Broker
-* Anypoint Metering Service Broker 
-
-The Anypoint Platform for PCF and Anypoint Platform Private Cloud Edition enable organizations to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within PCF.
+[Anypoint Platform](https://www.mulesoft.com/platform/enterprise-integration) solves the most challenging connectivity problems across SOA, SaaS, and APIs. It is a unified, highly productive, hybrid integration platform that creates a seamless application network of apps, data and devices with API-led connectivity. Integrating Anypoint Platform for PCF and Anypoint Platform Private Cloud Edition enables you to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within Pivotal Cloud Foundry.
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -41,6 +33,16 @@ Mulesoft Anypoint Platform Service Brokers for PCF provides the following key fe
 
 * Includes [Anypoint Exchange](https://docs.mulesoft.com/mule-fundamentals/v/3.8/anypoint-exchange), where your organization can discover and share assets for use and reuse throughout your integrations.
 
+When you install the tile, it installs these service brokers:
+
+* Runtime Manager Service Broker
+* API Gateway Manager Service Broker
+* Anypoint Metering Service Broker 
+
+See [Service Brokers](#service-brokers) for a description of each of these. The tile also deploys the Anypoint Metering application. This application exposes the PCF Metering API. For information on using this API, see [To Access Usage Data with the PCF Metering API](https://docs.mulesoft.com/anypoint-private-cloud/v/1.5.1/pcf-metering).
+
+During installation, the Anypoint Platform Service Brokers for PCF tile creates a new PCF org called `anypoint-sb-org` where the service brokers and application are installed.	
+
 ### <a id="service-brokers"></a>Service Brokers
 
 Anypoint Platform Service Brokers for PCF implements multiple service brokers that enable you to integrate the Anypoint Platform with PCF.
@@ -64,22 +66,22 @@ The Anypoint Metering Service Broker provides an API that enables you to view us
 ## <a id="reqs"></a>Requirements
 
 
-To install and run the Anypoint Platform for PCF, you need the following:
+To install and run the Anypoint Platform for PCF, you need the following software and systems:
 
+* Anypoint Platform Private Cloud Edition 1.5.1 (you must have a licensed account)
 * PCF Ops Manager 1.7.x or 1.8.x
 * PCF Apps Manager 1.7.x or 1.8.x
-* The latest supported version of (Redis for PCF)[http://docs.pivotal.io/redis/1-5/index.html] supported for your PCF version.
+* The latest version of Redis for PCF supported for your PCF version.
 * The latest version of Rabbit MQ for PCF for your PCF version.
 * [Cloud Foundry Command Line Interface (cf CLI)](http://docs.pivotal.io/pivotalcf/cf-cli/install-go-cli.html)
 * Python 2.x or later
-* Anypoint Platform Private Cloud Edition (a licensed account)
 * The default [Java buildpack](https://network.pivotal.io/products/buildpacks) for PCF
 
-For information on tasks you must perform before installing Anypoint Platform for PCF, see (Verify Prerequisites)[./installing.html#prereq].
+For information on the tasks you must perform before installing Anypoint Platform for PCF, see (Verify Prerequisites)[./installing.html#prereq].
 
 ### Network Requirements
 
-To enable network communications, Anypoint Platform Private Cloud Edition must be installed on the same network as your Anypoint Platform for PCF installation.
+To enable network communication between the two platforms, Anypoint Platform Private Cloud Edition must be installed on the same network as your Anypoint Platform for PCF installation.
 
 ##<a id='update'></a> Upgrading to the Latest Version
 
