@@ -13,9 +13,9 @@ This documentation describes the Mulesoft Anypoint Platform Service Brokers tile
 
 <dl>
 <dt>Mulesoft Anypoint Platform Service Brokers for PCF Details:</dt>
-<dd><strong>Version</strong>: 1.5.1.0</dd>
+<dd><strong>Version</strong>: v1.5.1.0</dd>
 <dd><strong>Release Date</strong>: March 2017</dd>
-<dd><strong>Software component version</strong>: Anypoint Platform Private Cloud Edition 1.5.1</dd>
+<dd><strong>Software component version</strong>: Anypoint Platform Private Cloud Edition v1.5.1</dd>
 <dd><strong>Compatible Ops Manager Version(s)</strong>: v1.7.x, v1.8.x</dd>
 <dd><strong>Compatible Elastic Runtime Version(s)</strong>: v1.7.x, v1.8.x</dd>
 <dd><strong>vSphere support?</strong> Yes</dd>
@@ -39,9 +39,12 @@ When you install the tile, it installs these service brokers:
 * API Gateway Manager Service Broker
 * Anypoint Metering Service Broker 
 
-See [Service Brokers](#service-brokers) for a description of each of these. The tile also deploys the Anypoint Metering application. This application exposes the PCF Metering API. For information on using this API, see [To Access Usage Data with the PCF Metering API](https://docs.mulesoft.com/anypoint-private-cloud/v/1.5/pcf-metering).
+See [Service Brokers](#service-brokers) for a description of each of these. 
+The tile also deploys the Anypoint Metering application. This application exposes the PCF Metering API. 
+For information on using this API, see [To Access Usage Data with the PCF Metering API](https://docs.mulesoft.com/anypoint-private-cloud/v/1.5/pcf-metering).
 
-During installation, the Anypoint Platform Service Brokers for PCF tile creates a new PCF org called `anypoint-sb-org` where the service brokers and application are installed.	
+During installation, the Anypoint Platform Service Brokers for PCF tile creates a new PCF org 
+called `anypoint-sb-org` where the service brokers and application are installed.	
 
 ### <a id="service-brokers"></a>Service Brokers
 
@@ -49,28 +52,40 @@ Anypoint Platform Service Brokers for PCF implements multiple service brokers th
 
 #### <a id='sb'></a> What is a Service Broker?
 
-A Service Broker allows PCF applications to bind to services and interact with them easily from the UI or the command line. The **Anypoint Platform Service Brokers for PCF** tile lets PCF apps use one or more Anypoint Platform accounts. The tile deploys as a Java app on PCF and exposes the Anypoint Runtime Manager and Anypoint API Manager as brokered services on the Cloud Foundry Marketplace. PCF developers can then create instances of these services and bind them to their applications either from the Pivotal Apps Manager Console or from the command line. This simplifies the installation and  use of the Anypoint Platform with PCF apps.
+A Service Broker allows PCF applications to bind to services and interact with them easily from the UI or the command line. 
+The **Anypoint Platform Service Brokers for PCF** tile lets PCF apps use one or more Anypoint Platform accounts. 
+The tile deploys as a Java app on PCF and exposes the Anypoint Runtime Manager and 
+Anypoint API Manager as brokered services on the Cloud Foundry Marketplace. 
+PCF developers can then create instances of these services and bind them to their applications 
+either from the Pivotal Apps Manager Console or from the command line. 
+This simplifies the installation and  use of the Anypoint Platform with PCF apps.
 
 #### <a id="rmsb"></a> Runtime Manager Service Broker
 
-The Runtime Manager Service Broker exposes PCF as a deployment target within the Anypoint Runtime Manager and lets you deploy Mule applications to PCF, alongside other deployment targets. See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies) for example scenarios where Mule apps deploy to cloud or local-environment targets.
+The Runtime Manager Service Broker exposes PCF as a deployment target within the Anypoint Runtime Manager and 
+lets you deploy Mule applications to PCF, alongside other deployment targets. 
+See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies) 
+for example scenarios where Mule apps deploy to cloud or local-environment targets.
 
 #### <a id="apigsb"></a> API Gateway Manager Service Broker
 
-The API Gateway Manager lets you create and deploy a Mule API proxy that intercepts traffic to a non-Mule app running on PCF. This lets you use the Mulesoft interface to apply policies over the API and the PCF interface to view usage and policy metrics. See [Deploy a Proxy](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy).
+The API Gateway Manager lets you create and deploy a Mule API proxy that intercepts traffic to a non-Mule app running on PCF. 
+This lets you use the Mulesoft interface to apply policies over the API and the PCF interface to view usage and policy metrics.
+See [Deploy a Proxy](https://docs.mulesoft.com/api-manager/setting-up-an-api-proxy).
 
 #### <a id="metering"></a> Anypoint Metering Service Broker 
 
-The Anypoint Metering Service Broker provides an API that enables you to view usage metrics for Mule applications deployed to PCF. You can view usage metrics for production, pre-production, staging, and development environments.
+The Anypoint Metering Service Broker provides an API that enables you to view usage metrics for Mule applications deployed to PCF. 
+You can view usage metrics for production, pre-production, staging, and development environments.
 
 ## <a id="reqs"></a>Requirements
 
 
 To install and run the Anypoint Platform for PCF, you need the following software and systems:
 
-* Anypoint Platform Private Cloud Edition 1.5.1 (you must have a licensed account)
-* PCF Ops Manager 1.7.x or 1.8.x
-* PCF Apps Manager 1.7.x or 1.8.x
+* Anypoint Platform Private Cloud Edition v1.5.1 (you must have a licensed account)
+* PCF Ops Manager v1.7.x or v1.8.x
+* PCF Apps Manager v1.7.x or v1.8.x
 * The latest version of Redis for PCF supported for your PCF version.
 * The latest version of Rabbit MQ for PCF for your PCF version.
 * [Cloud Foundry Command Line Interface (cf CLI)](http://docs.pivotal.io/pivotalcf/cf-cli/install-go-cli.html)
@@ -94,4 +109,5 @@ Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Fo
 
 ## <a id='license'></a>License
 
-The product is based upon Anypoint Platform Private Cloud Edition, so a license specifically for this version of the product is required. Contact [MuleSoft sales](mailto:sales@mulesoft.com).
+The product is based upon Anypoint Platform Private Cloud Edition, so a license specifically for this version of the product is required. 
+Contact [MuleSoft sales](mailto:sales@mulesoft.com).
