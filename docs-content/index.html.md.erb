@@ -3,11 +3,11 @@ title: Anypoint Platform Service Brokers for PCF
 owner: MuleSoft
 ---
 
-This documentation describes the Mulesoft Anypoint Platform Service Brokers tile for Pivotal Cloud Foundry (PCF).
+This documentation describes the Mulesoft Anypoint Platform Service Brokers for Pivotal Cloud Foundry (PCF) tile.
 
 ## <a id="overview"></a> Overview
 
-[Anypoint Platform](https://www.mulesoft.com/platform/enterprise-integration) solves the most challenging connectivity problems across SOA, SaaS, and APIs. It is a unified, highly productive, hybrid integration platform that creates a seamless application network of apps, data and devices with API-led connectivity. Integrating Anypoint Platform for PCF and Anypoint Platform Private Cloud Edition enables you to design, develop, deploy, manage and operate APIs, connectivity apps and microservices within Pivotal Cloud Foundry.
+[Anypoint Platform](https://www.mulesoft.com/platform/enterprise-integration) solves the most challenging connectivity problems across SOA, SaaS, and APIs. It is a unified, highly productive, hybrid integration platform that creates a seamless application network of apps, data and devices with API-led connectivity. Integrating Anypoint Platform for PCF and Anypoint Platform Private Cloud Edition enables you to design, develop, deploy, manage and operate APIs, connectivity applications and microservices within Pivotal Cloud Foundry.
 
 ## <a id="snapshot"></a>Product Snapshot
 
@@ -18,23 +18,23 @@ The following table provides version and version-support information about Mules
     <th>Details</th>
     <tr>
         <td>Version</td>
-        <td>v1.5.1.0</td>
+        <td>v1.5.2.0</td>
     </tr>
     <tr>
         <td>Release date</td>
-        <td>March 2017</td>
+        <td>April 2017</td>
     </tr>
     <tr>
         <td>Software component version</td>
-        <td>Anypoint Platform Private Cloud Edition v1.5.1</td>
+        <td>Anypoint Platform Private Cloud Edition v1.5.2.0</td>
     </tr>
     <tr>
         <td>Compatible Ops Manager version(s)</td>
-        <td>v1.7.x, v1.8.x</td>
+        <td>v1.7.x, v1.8.x, v1.9.x, v1.10.x</td>
     </tr>
     <tr>
         <td>Compatible Elastic Runtime version(s)</td>
-        <td>v1.7.x, v1.8.x</td>
+        <td>v1.7.x, v1.8.x, v1.9.x, v1.10.x</td>
     </tr>
     <tr>
         <td>IaaS support</td>
@@ -65,26 +65,14 @@ For information on using this API, see [To Access Usage Data with the PCF Meteri
 During installation, the Anypoint Platform Service Brokers for PCF tile creates a new PCF org 
 called `anypoint-sb-org` where the service brokers and application are installed.	
 
-### <a id="service-brokers"></a>Service Brokers
+### <a id="service-brokers"></a>Anypoint Platform Service Brokers
 
-Anypoint Platform Service Brokers for PCF implements multiple service brokers that enable you to integrate the Anypoint Platform with PCF.
-
-#### <a id='sb'></a> What is a Service Broker?
-
-A Service Broker allows PCF applications to bind to services and interact with them easily from the UI or the command line. 
-The **Anypoint Platform Service Brokers for PCF** tile lets PCF apps use one or more Anypoint Platform accounts. 
-The tile deploys as a Java app on PCF and exposes the Anypoint Runtime Manager and 
-Anypoint API Manager as brokered services on the Cloud Foundry Marketplace. 
-PCF developers can then create instances of these services and bind them to their applications 
-either from the Pivotal Apps Manager Console or from the command line. 
-This simplifies the installation and  use of the Anypoint Platform with PCF apps.
+Anypoint Platform Service Brokers for PCF uses multiple service brokers to enable you to integrate the Anypoint Platform with PCF.
 
 #### <a id="rmsb"></a> Runtime Manager Service Broker
 
 The Runtime Manager Service Broker exposes PCF as a deployment target within the Anypoint Runtime Manager and 
-lets you deploy Mule applications to PCF, alongside other deployment targets. 
-See [Deployment Strategies](https://docs.mulesoft.com/runtime-manager/deployment-strategies) 
-for example scenarios where Mule apps deploy to cloud or local-environment targets.
+lets you deploy Mule applications to PCF.
 
 #### <a id="apigsb"></a> API Gateway Manager Service Broker
 
@@ -99,17 +87,16 @@ You can view usage metrics for production, pre-production, staging, and developm
 
 ## <a id="reqs"></a>Requirements
 
+To install and run the Anypoint Platform for PCF, you must have the following software:
 
-To install and run the Anypoint Platform for PCF, you need the following software and systems:
-
-* Anypoint Platform Private Cloud Edition v1.5.1 (you must have a licensed account)
-* PCF Ops Manager v1.7.x or v1.8.x
-* PCF Apps Manager v1.7.x or v1.8.x
+* Anypoint Platform Private Cloud Edition v1.5.2 (you must have a licensed account)
+* PCF Ops Manager
+* PCF Apps Manager
 * The latest version of Redis for PCF supported for your PCF version.
 * The latest version of Rabbit MQ for PCF for your PCF version.
-* [Cloud Foundry Command Line Interface (cf CLI)](http://docs.pivotal.io/pivotalcf/cf-cli/install-go-cli.html)
+* The [Cloud Foundry Command Line Interface (cf CLI)](http://docs.pivotal.io/pivotalcf/cf-cli/install-go-cli.html)
 * Python 2.x or later
-* The default [Java buildpack](https://network.pivotal.io/products/buildpacks) for PCF
+* The default Java buildpack for PCF
 
 For information on the tasks you must perform before installing Anypoint Platform for PCF, see (Verify Prerequisites)[./installing.html#prereq].
 
@@ -119,14 +106,12 @@ To enable network communication between the two platforms, Anypoint Platform Pri
 
 ##<a id='update'></a> Upgrading to the Latest Version
 
-Service brokers are enabled by default and the market place shows all the installed services and plans.
-To upgrade or downgrade the tile version, see the PCF service broker documentation. This process requires some downtime.
+To upgrade the Anypoint Platform Service Brokers for PCF tile, install the latest version. See [Installing Anypoint Platform Service Brokers for PCF](index.html).
 
 ## <a id="feedback"></a>Feedback
 
-Please provide any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or send an email to [MuleSoft support](mailto:support@mulesoft.com).
+Please send any bugs, feature requests, or questions to the [Pivotal Cloud Foundry Feedback](mailto:pivotal-cf-feedback@pivotal.io) list or to [MuleSoft support](mailto:support@mulesoft.com).
 
 ## <a id='license'></a>License
 
-The product is based upon Anypoint Platform Private Cloud Edition, so a license specifically for this version of the product is required. 
-Contact [MuleSoft sales](mailto:sales@mulesoft.com).
+The product requires Anypoint Platform Private Cloud Edition. You must have a license for both Anypoint Platform Private Cloud Edition and Anypoint Platform for PCF. Contact [MuleSoft sales](mailto:sales@mulesoft.com).

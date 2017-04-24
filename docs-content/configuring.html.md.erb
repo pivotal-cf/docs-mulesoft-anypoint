@@ -4,14 +4,14 @@ owner: MuleSoft
 ---
 
 This topic describes how to configure the Anypoint Platform Service Brokers for PCF tile. 
-Before configuring this tile, ensure that you have verfied the prerequisites and installed the tile as 
+Before configuring this tile, ensure that you have verified the prerequisites and installed the tile as 
 described in [Installing Anypoint Platform Service Brokers for PCF](installing.html).
 
-To configure the tile, modify that properties on each tab as necessary. The following sections describe the properties that appear on each tab.
+To configure the tile, modify the properties on each tab as necessary.
 
 ##<a id='license'></a> Configure the Mule Runtime License
 
-Use the **Mule Runtime License Configuration** tab to add the license file in the textbox on this tab. This is the license file that you downloaded in [Obtain Your muleLicenseKey.lic File](./installing.html#license).
+Use the **Mule Runtime License Configuration** tab to add the license file in the text box on this tab. This is the license file that you downloaded in [Obtain Your muleLicenseKey.lic File](./installing.html#license).
 
 <%= image_tag 'license.png' %>
 
@@ -25,13 +25,13 @@ This tab contains the following properties:
 
 | Property | Description |
 | --------- | ------------ |
-| Anypoint clientId | Enter the value of the `clientId` you obtained before installing the tile. |
-| Anypoint clientSecret | Enter the value of the `clientSecret` you obtained before installing the tile. |
+| Anypoint clientId | The value of the `clientId` you obtained before installing the tile. |
+| Anypoint clientSecret | The value of the `clientSecret` you obtained before installing the tile. |
 | Anypoint orgId | Enter the value of the `orgId` you obtained before installing the tile. |
-| Anypoint platform URI | Enter the URI of the Anypoint Platform host in your local network. |
-| Anypoint coreservices URI | Enter the URI of the Anypoint Platform Core Services host in your local network |
-| Anypoint contracts URI | Enter the URI of your contract caching service.|
-| Anypoint platform ARM base URI | Enter the URI of the Runtime Manager host on your local network |
+| Anypoint platform URI | The URI used to communicate with the API Manager application of your Anypoint Platform Private Cloud Edition installation.  |
+| Anypoint coreservices URI | The URI a Mule application for authentication and authorization when communicating with Private Cloud Edition. |
+| Anypoint contracts URI | The URI of your contract caching service. This is required for caching policies in API Manager.|
+| Anypoint platform ARM base URI | The URI of the Runtime Manager host on your local network. This is required for a Mule application to communicate with Runtime Manager. |
 
 
 ##<a id='services-config'></a> Configure the Runtime Manager and API Gateway Service Brokers
@@ -40,7 +40,7 @@ Use the **Anypoint Platform - Private Cloud Edition Service Broker Configuration
 
 <%= image_tag 'runtime-manager-service.png' %>
 
-The following properties are required by Runtime Manager service broker. If you have multiple PCF installations, these properties must be uniquely defined for each installation:
+The following properties are required by Runtime Manager service broker. In general, you should not change the default values of these properties.
 
 
 * RuntimeManager Service Broker Service Name
@@ -52,21 +52,24 @@ The following properties are required by Runtime Manager service broker. If you 
 
 ##<a id='metrics'></a> Configure Metering Service Plans
 
-Use the **Anypoint Metering Service Plans** tab to configure the maximum number of monthly API requests (in millions) for each plan type. Plans are associated with production, pre-production, staging, and development environments. You can associate each org in your PCF installation with a specific plan type.
+Use the **Anypoint Metering Service Plans** tab to configure the metering service plan for your installation. The two types of plans are:
 
-See [About PCF Metrics and Usage](https://docs.mulesoft.com/anypoint-private-cloud/v/1.5/pcf-metering) for more information.
+* **Unlimited**: Provides unlimited access to the Anypoint Platform for PCF. All of the metering components are disabled.
+* **Limited**: Enables you to specify the maximum number of monthly API requests (in millions) for each plan type. Plans are associated with production, pre-production, staging, and development environments. You can associate each org in your PCF installation with a specific plan type. See [About PCF Metrics and Usage](https://docs.mulesoft.com/anypoint-private-cloud/v/1.5/pcf-metering) for more information.
+
+<p class="note"><strong>Note</strong>: When upgrading or reinstalling the tile, you must reconfigure any custom settings you make to the properties on this tab..</p>
 
 <%= image_tag 'metering-service.png' %>
 
 ##<a id='services-enable'></a> Enable or Disable Service Brokers
 
-Use the **Service Access** tab to enable or disable specific Anypoint Platform service brokers.
+Use the **Service Access** tab to enable or disable specific Anypoint Platform service brokers. In general, you should not change the default values of these properties.
 
 <%= image_tag 'service-access.png' %>
 
 ##<a id='errands'></a> Configure Errands
 
-Use the **Errands Tab** to enable or disable post-deploy or pre-delete errands.
+Use the **Errands Tab** to enable or disable post-deploy or pre-delete errands. In general, you should not change the default values of these properties.
 
 <%= image_tag 'errands.png' %>
 
@@ -78,9 +81,3 @@ This tile contains these errands:
 | deploy-anypoint-platform-errands | Deploys and updates the Runtime Manager service broker and API Gateway Manager service broker |
 | delete-metering-errands | Deletes the Anypoint metering Service Broker and Anypoint Metering application |
 | delete-anypoint-platform-errands | Deletes the Runtime Manager service broker and API Gateway Manager service broker |
-
-##<a id='stemcell'></a> Import a New Stemcell
-
-If necessary, download the required stemcell from [Pivotal Network](http://network.pivotal.io/products/stemcells) and upload it as a `.zip` file by clicking **Import Stemcell**.
-
-<%= image_tag 'stemcell.png' %>
