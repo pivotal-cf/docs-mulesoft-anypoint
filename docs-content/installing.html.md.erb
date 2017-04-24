@@ -3,6 +3,8 @@ title: Installing Anypoint Platform Service Brokers for PCF
 owner: MuleSoft
 ---
 
+This topic describes how to install the Anypoint Platform Service Brokers for PCF tile. Installing the tile is one step in workflow for installing the Anypoint Platform for PCF. See [Workflow: Install, Configure, and Use Anypoint Platform for PCF](https://docs.mulesoft.com/anypoint-platform-pcf/v/1.5/pcf-workflow). 
+
 ## <a id="prereq"></a> Verify Prerequisites
 
 Before installing the Anypoint Platform Service Brokers for PCF tile ensure that you have completed the prerequisite tasks outlined in this section.
@@ -15,8 +17,11 @@ Before installing Anypoint Platform Service Brokers for PCF, you must install an
 
 * Rabbit MQ for PCF, [version 1.6](http://docs.pivotal.io/rabbitmq-cf/1-6/index.html) or [version 1.7](http://docs.pivotal.io/rabbitmq-cf/1-7/index.html)
 
-<p class="note"><strong>Note</strong>: When installing these tiles, do not configure them to use SSL.</p>
+###<a id='SSL-cert'></a>Add SSL Certificates to Rabbit MQ and Ops Manager Director
 
+If you are using SSL to encrypt communications between Rabbit MQ the PCF Metering application, you must add your SSL certificate to the Rabbit MQ and Ops Manager Director tiles. 
+
+You must add these certificates before installing the Anypoint Platform Service Brokers for PCF tile.
 
 ###<a id='license'></a>Obtain Your muleLicenseKey.lic File</a>
 
@@ -35,7 +40,7 @@ To configure the Anypoint Platform Service Brokers for PCF tile, you must have c
 
 1. Log in to the Anypoint Platform as an admin user.
 1. Navigate to **Access Management** > **Organization**.
-1. Open the settings for your main organization and record the values for `clientId`, `clientSecret`, `orgId`. 
+1. Open the settings for your master organization and record the values for `clientId`, `clientSecret`, `orgId`. 
 
 Use these values later when configuring the tile.
 
@@ -44,18 +49,20 @@ Use these values later when configuring the tile.
 
 To install the Anypoint Platform Service Brokers for PCF tile, perform the following:
 
-1. Download the product file from [MuleSoft's customer portal](https://www.mulesoft.com/support-login) or contact your MuleSoft account representative.
+1. Download the product file from the [Pivotal Network](https://network.pivotal.io/products/mulesoft-anypoint) or contact your MuleSoft account representative.
 
 1. Navigate to the Ops Manager Installation Dashboard and click **Import a Product** to upload the product file.
 
 1. To add the tile to your staging area, click **Add** next to the Anypoint Platform Service Brokers for PCF tile in the Ops Manager **Available Products** view.
 
-1. To configure the tile, click the newly added **Anypoint Platform Service Brokers for PCF** tile. Follow the procedures in [Configure the Tile in Ops Manager](./configuring.html). After finishing these procedures, return to the next step to apply your changes
+1. To configure the tile, click the **Anypoint Platform Service Brokers for PCF** tile. 
+
+1. Configure the tile following the procedures in [Configure the Tile in Ops Manager](./configuring.html). After finishing these procedures, continue to the next step to apply your changes
 
 1. After finishing the tile configuration, click **Save**.
 
-1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the **Anypoint Platform Service Brokers for PCF** tile.
+1. Return to the Ops Manager Installation Dashboard and click **Apply Changes** to install the Anypoint Platform Service Brokers for PCF tile.
 
-If your PCF instllation has multiple organizations because you will manage multiple top-level organizations and want to run each on a different PCF space, you must install multiple separate tiles and configure one with each.
+## <a id="post-install"></a> Perform Post Installation Steps 
 
-After installing and configuring Anypoint Platform Service Brokers for PCF, see [Using Anypoint Platform for PCF](./using.html) for additional requirements.
+After installing and configuring the Anypoint Platform Service Brokers for PCF tile, return to [Workflow: Install, Configure, and Use Anypoint Platform for PCF](https://docs.mulesoft.com/anypoint-platform-pcf/v/1.5/pcf-workflow) to continue installing Anypoint Platform for PCF.
